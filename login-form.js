@@ -25,7 +25,8 @@ async function login() {
         let resp = await fetch("https://api-nodejs-todolist.herokuapp.com/user/login", {
             method: 'POST',
             headers: myHeaders,
-            body: dataForm
+            body: dataForm,
+            redirect:"follow"
         });
         let result = await resp.json();
         let token = result.token;
