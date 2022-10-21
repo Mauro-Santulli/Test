@@ -1,0 +1,50 @@
+<html>
+
+<body>
+  <div id="container">
+    <h2>Person's Form</h2>
+    <form id="person-form">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let formId = document.querySelector("#person-form")
+  let html = ""
+  html += '<div>'
+  html += '<label>First Name:</label>'
+  html += '<input type="text" class="form-input" id="firstName"/>'
+  html += '</div>'
+  html += '<div>'
+  html += '<label>Last Name:</label>'
+  html += '<input type="text" class="form-input" id="lastName"/>'
+  html += '</div>'
+  html += '<div>'
+  html += '<label>Age:</label>'
+  html += '<input type="number" class="form-input" id="age"/>'
+  html += '</div>'
+
+  formId.insertAdjacentHTML("beforebegin", html)
+
+  document.querySelector("button").addEventListener("click", e => {
+    e.preventDefault;
+    submitPersonForm();
+  })
+
+  function submitPersonForm() {
+    let fName = document.querySelector("#firstName").value;
+    let lName = document.querySelector("#lastName").value;
+    let age = document.querySelector("#age").value;
+    let person = {
+      firstname: fName,
+      lastname: lName,
+      age: age
+    }
+
+    console.log(person);
+  }
+
+</script>

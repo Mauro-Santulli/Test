@@ -1,0 +1,21 @@
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  static fromObject(oggetto){
+    let person1 = new Person(oggetto.firstName,oggetto.lastName)
+    return person1
+  }
+
+}
+
+const obj = {
+  firstName: 'Mario',
+  lastName: 'Rossi'
+};
+
+const person = Person.fromObject(obj);
+console.log(`${person.firstName} ${person.lastName}`);
+
